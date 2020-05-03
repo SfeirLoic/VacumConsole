@@ -3462,11 +3462,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\peter\\source\\repos\\Vacum\\Vacum.csproj",
+      "projectUniqueName": "C:\\Users\\peter\\source\\repos\\VacumConsole\\Vacum.csproj",
       "projectName": "Vacum",
-      "projectPath": "C:\\Users\\peter\\source\\repos\\Vacum\\Vacum.csproj",
+      "projectPath": "C:\\Users\\peter\\source\\repos\\VacumConsole\\Vacum.csproj",
       "packagesPath": "C:\\Users\\peter\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\peter\\source\\repos\\Vacum\\obj\\",
+      "outputPath": "C:\\Users\\peter\\source\\repos\\VacumConsole\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\peter\\AppData\\Roaming\\NuGet\\NuGet.Config",

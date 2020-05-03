@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "anywx/iO8hjlA1E2TZj49wGACCWcVDAnx5alisOkK0Istkb580sL3M022w4j+n0E+AxJcHJjuA/XXzArLPyqRQ==",
+  "dgSpecHash": "D4GihcdjHh750owwYuijeibSYUOief4NqdrTgUir2XubF84XMIvTKbU32Qp7XmIi+NNqULpO4ZPkBXhTnvnmhw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\peter\\source\\repos\\Vacum\\Vacum.csproj",
+  "projectFilePath": "C:\\Users\\peter\\source\\repos\\VacumConsole\\Vacum.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\peter\\.nuget\\packages\\bond.core.csharp\\8.2.0\\bond.core.csharp.8.2.0.nupkg.sha512",
     "C:\\Users\\peter\\.nuget\\packages\\htmlagilitypack\\1.11.23\\htmlagilitypack.1.11.23.nupkg.sha512",

@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 
 namespace Vacum
 {
-    internal class Manga
+    public class Manga : IComparable
     {
         //Variables cachés
         private String _mangaTitleUrl;
@@ -25,8 +26,9 @@ namespace Vacum
         public List<Chapitre> MangaChapToDlLst { get; set; }
         public int MangaNbrPagesToDl { get; set; }
 
-        public Manga()
-        {
+        public int HigherChap { get; set; }
+
+        public Manga(){
             MangaTitleUrl = "";
             MangaUrl = "";
             MangaPath = "";
@@ -44,28 +46,18 @@ namespace Vacum
             MangaNbrPagesTot = 0;
             MangaChapToDlLst = new List<Chapitre>();
             MangaNbrPagesToDl = 0;
-        }
-        public Manga(string titleUrl, string url)
-        {
-            MangaTitleUrl = titleUrl;
-            MangaUrl = url;
-            MangaPath = "";
-            MangaChapCompleteLst = new List<Chapitre>();
-            MangaNbrPagesTot = 0;
-            MangaChapToDlLst = new List<Chapitre>();
-            MangaNbrPagesToDl = 0;
+            HigherChap = 0;
         }
 
-        public Manga(string titleUrl, string url, List<Chapitre> chapterLst)
+        /// <summary>
+        /// a.compareTo(b) => [-1, a < b][0, a=b][1, a>b]
+        /// 1 < a = A < b
+        /// </summary>
+        /// <param name="obj"></param>
+        public int CompareTo(object obj)
         {
-            MangaTitleUrl = titleUrl;
-            MangaUrl = url;
-            MangaPath = "";
-            MangaChapCompleteLst = chapterLst;
-            MangaNbrPagesTot = 0;
-            MangaChapToDlLst = new List<Chapitre>();
-            MangaNbrPagesToDl = 0;
+            Manga manga = (Manga)obj;
+            return String.Compare(MangaTitleUrl, manga.MangaTitleUrl, true);
         }
-
     }
 }

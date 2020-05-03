@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Globalization;
+using System.IO;
+using System.IO.Compression;
+using System.Linq;
 using System.Net;
 using System.Net.Http;
 
@@ -16,6 +19,7 @@ namespace Vacum
             String thingClean = thing.Replace("-", " ")
                                      .Replace("_", " ")
                                      .Replace("*", " ")
+                                     .Replace("&#039;", "'")
                                      ;
             TextInfo myTI = new CultureInfo("en-US", false).TextInfo;
             return myTI.ToTitleCase(thingClean);
@@ -66,5 +70,17 @@ namespace Vacum
                 Console.WriteLine("Error {0]", e.Message); 
             }
         }
+
+        internal static void zipAndDel(Manga m1)
+        {
+            foreach (Chapitre chap in m1.MangaChapToDlLst)
+            {
+                string startPath = chap.ChapPath;
+                string zipPath = chap.ChapPath + @".cbr";
+                ZipFile.CreateFromDirectory(startPath, zipPath);
+                Directory.Delete(chap.ChapPath, true);
+            }
+        }
+
     }
 }

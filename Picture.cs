@@ -3,7 +3,7 @@ using System.IO;
 
 namespace Vacum
 {
-    internal class Picture : Chapitre
+    public class Picture : Chapitre
     {
         public String PicUrl { get; set; }
         public String PicFullName { get; set; }

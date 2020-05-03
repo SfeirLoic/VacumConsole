@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Vacum
 {
-    internal class Chapitre : Manga
+    public class Chapitre : Manga
     {
         private String _chapTitleUrl;
 
@@ -13,7 +14,7 @@ namespace Vacum
             set
             {
                 _chapTitleUrl = value;
-                ChapTitleClean = Outils.cleanString(_chapTitleUrl);
+                ChapTitleClean = Outils.cleanString(_chapTitleUrl).Replace(".",",");
             }
         }
         public String ChapTitleClean { get; private set; }
@@ -21,31 +22,28 @@ namespace Vacum
         public List<Picture> ChapPicLst { get; set; }
         public String ChapUrl { get; set; }
         public String ChapPath { get; set; }
-        public int ChapNbrPage { get; set; }
 
-        public Chapitre()
+        public int ChapNumber { get; set; }
+        public int ChapNbrPage { get; set; }
+        public int ChapNbrPageAlreadyDled { get; set; }
+
+        public bool chapAlreadyDled { get; set; }
+
+        public Chapitre(Manga manga, string chapTitleUrl, string chapUrl)
         {
-            ChapTitleUrl = "";
-            ChapUrl = "";
+            MangaPath = manga.MangaPath;
+            ChapTitleUrl = chapTitleUrl;
+            ChapUrl = chapUrl;
             ChapPicLst = new List<Picture>();
-            ChapPath = "";
+            ChapPath = manga.MangaPath + "/" + ChapTitleClean;
+            int.TryParse(chapTitleUrl.Split(" ").Last(), out int i);
+            ChapNumber = i;
             ChapNbrPage = 0;
+            ChapNbrPageAlreadyDled = 0;
+            chapAlreadyDled = false;
+            if (ChapNumber > HigherChap)
+                HigherChap = ChapNumber;
         }
-        public Chapitre(string titreChapUrl, string urlChap)
-        {
-            ChapTitleUrl = titreChapUrl;
-            ChapUrl = urlChap;
-            ChapPicLst = new List<Picture>();
-            ChapPath = "";
-            ChapNbrPage = 0;
-        }
-        public Chapitre(string titreChapUrl, string urlChap, List<Picture> picLstChap)
-        {
-            ChapTitleUrl = titreChapUrl;
-            ChapUrl = urlChap;
-            ChapPicLst = picLstChap;
-            ChapPath = "";
-            ChapNbrPage = 0;
-        }
+        public Chapitre() { }
     }
 }

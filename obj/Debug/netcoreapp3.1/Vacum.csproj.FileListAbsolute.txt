@@ -17,3 +17,4 @@ C:\Users\peter\source\repos\Vacum\obj\Debug\netcoreapp3.1\Vacum.csproj.CopyCompl
 C:\Users\peter\source\repos\Vacum\obj\Debug\netcoreapp3.1\Vacum.dll
 C:\Users\peter\source\repos\Vacum\obj\Debug\netcoreapp3.1\Vacum.pdb
 C:\Users\peter\source\repos\Vacum\obj\Debug\netcoreapp3.1\Vacum.genruntimeconfig.cache
+C:\Users\peter\source\repos\Vacum\obj\Debug\netcoreapp3.1\Vacum.csprojAssemblyReference.cache
